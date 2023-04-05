@@ -5,14 +5,14 @@ import React, { Component } from 'react'
 export default class Carosual extends Component {
   render() {
     return (
-        <div>
+        <div style={{padding:10}}>
             <Carousel>
                 <Carousel.Item interval={1000}>
                     <img
                     className="d-block w-100"
-                    width={171}
-                    height={480}
-                    src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg"
+                    width='auto'
+                    height={200}
+                    src="https://www.shutterstock.com/image-vector/blue-horizontal-lens-flares-pack-260nw-2202148279.jpg"
                     alt="First slide"
                     />
                     <Carousel.Caption>
@@ -23,9 +23,9 @@ export default class Carosual extends Component {
                 <Carousel.Item interval={500}>
                     <img
                     className="d-block w-100"
-                    width={171}
-                    height={480}
-                    src="https://thumbs.dreamstime.com/b/planet-tree-human-hands-over-green-nature-save-earth-concept-elements-image-furnished-nasa-90934032.jpg"
+                    width='auto'
+                    height={200}
+                    src="https://www.shutterstock.com/image-vector/blue-horizontal-lens-flares-pack-260nw-2202148279.jpg"
                     alt="Second slide"
                     />
                     <Carousel.Caption>
@@ -36,9 +36,9 @@ export default class Carosual extends Component {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    width={171}
-                    height={480}
-                    src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-122119019.jpg"
+                    width='auto'
+                    height={200}
+                    src="https://www.shutterstock.com/image-vector/blue-horizontal-lens-flares-pack-260nw-2202148279.jpg"
                     alt="Third slide"
                     />
                     <Carousel.Caption>
@@ -52,9 +52,9 @@ export default class Carosual extends Component {
                 <Carousel.Item interval={1000}>
                     <img
                     className="d-block w-100"
-                    width={171}
-                    height={480}
-                    src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg"
+                    width='auto'
+                    height={200}
+                    src="https://dingobrewingcompany.com.au/wp-content/uploads/2021/02/jumbo_twa_horizontal_falls_1.jpg"
                     alt="First slide"
                     />
                     <Carousel.Caption>
@@ -65,9 +65,9 @@ export default class Carosual extends Component {
                 <Carousel.Item interval={500}>
                     <img
                     className="d-block w-100"
-                    width={171}
-                    height={480}
-                    src="https://thumbs.dreamstime.com/b/planet-tree-human-hands-over-green-nature-save-earth-concept-elements-image-furnished-nasa-90934032.jpg"
+                    width='auto'
+                    height={200}
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw_QYkU4T6-GAKHljsAPGpK6I-xPm9EJx4jT7OmIPwO_38xQc7e2Z3efQdSXcRK0kXuAY&usqp=CAU"
                     alt="Second slide"
                     />
                     <Carousel.Caption>
@@ -79,7 +79,7 @@ export default class Carosual extends Component {
                     <img
                     className="d-block w-100"
                     width={171}
-                    height={480}
+                    height={200}
                     src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-122119019.jpg"
                     alt="Third slide"
                     />

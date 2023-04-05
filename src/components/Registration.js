@@ -2,69 +2,72 @@ import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import { useState } from 'react';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+// import { useState } from 'react';
 
+import axios from 'axios';
+
+
+const register = 'http://localhost:9001/register';
 
 export default class Registration extends Component {
     constructor(props){ 
         super(props) 
         // Set initial state 
         this.state = {  
-                    FirstName : '',
-                    LastName:'',
-                    ContactNumber:'',
-                    Email:'',
-                    Password:''
+                    first_name : '',
+                    last_name:'',
+                    contact:'',
+                    email:'',
+                    password:''
                 } 
       } 
         
-    handleFirstName = (e) => {
+    handlefirst_name = (e) => {
         this.setState({
-            FirstName:e.target.value
+            first_name:e.target.value
         })
     }
     
-    handleLastname = (e) => {
+    handlelast_name = (e) => {
         this.setState({
-            LastName:e.target.value
+            last_name:e.target.value
         })
     }
     
     handleontactnumber = (e) => {
         this.setState({
-            ContactNumber:e.target.value
+            contact:e.target.value
         })
     }
     
-    handleEmail= (e) => {
+    handleemail= (e) => {
         this.setState({
-            Email:e.target.value
+            email:e.target.value
         })
     }
     
-    handlePassword= (e) => {
+    handlepassword= (e) => {
         this.setState({
-            Password:e.target.value
+            password:e.target.value
         })
     }
     
     handleSubmit = (e)=>{
-        console.log(this.state.FirstName)
-        console.log(this.state.LastName)
-        console.log(this.state.ContactNumber)
-        console.log(this.state.Email)
-        console.log(this.state.Password)
-        e.preventDefault();
+        console.log(this.state)
 
-        const userinfo ={
-            "Fname":this.state.FirstName,
-            "Fname":this.state.LastName,
-            "contact":this.state.ContactNumber,
-            "email":this.state.Email,
-            "password":this.state.Password,
-            "role":"admin"
-        }
-        console.log(`json data==>${userinfo}`)
+        axios.post(register,this.state)
+        .then(response => {
+            console.log(response)
+        })
+
+        .catch((error) => {
+            console.log("Error")
+            console.log(error)
+        })
+        e.preventDefault();
+        // http://localhost:9001/getAllusers
     }
 
     
@@ -78,7 +81,7 @@ export default class Registration extends Component {
                 <Form onSubmit={this.handleSubmit} style={{padding:'20px'}}>
                     <Form.Group className="mb-3" >
                     <Form.Label>First Name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter first Name" value={this.state.FirstName} onChange={this.handleFirstName} />
+                    <Form.Control type="text" placeholder="Enter first Name" value={this.state.first_name} onChange={this.handlefirst_name} />
                     <Form.Text className="text-muted">
                     Enter your Firat Nmae.
                     </Form.Text>
@@ -86,7 +89,7 @@ export default class Registration extends Component {
 
                     <Form.Group className="mb-3">
                     <Form.Label>Last Name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter Last name" value={this.state.LastName} onChange={this.handleLastname}/>
+                    <Form.Control type="text" placeholder="Enter Last name" value={this.state.last_name} onChange={this.handlelast_name}/>
                     <Form.Text className="text-muted">
                         Enter your Firat Nmae.
                     </Form.Text>
@@ -95,7 +98,7 @@ export default class Registration extends Component {
 
                     <Form.Group className="mb-3">
                     <Form.Label>Contact Number</Form.Label>
-                    <Form.Control type="text" placeholder="Enter Contact Number" value={this.state.ContactNumber} onChange={this.handleontactnumber}/>
+                    <Form.Control type="text" placeholder="Enter Contact Number" value={this.state.contact} onChange={this.handleontactnumber}/>
                     <Form.Text className="text-muted">
                         Enatr Eyour contact Number
                     </Form.Text>
@@ -103,7 +106,7 @@ export default class Registration extends Component {
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" value={this.state.Email} onChange={this.handleEmail}/>
+                    <Form.Control type="email" placeholder="Enter email" value={this.state.Email} onChange={this.handleemail}/>
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                     </Form.Text>
@@ -111,10 +114,14 @@ export default class Registration extends Component {
             
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" value={this.state.Password} onChange={this.handlePassword}/>
+                    <Form.Control type="password" placeholder="Password" value={this.state.password} onChange={this.handlepassword}/>
                     </Form.Group>
-    
-                    <Button variant="primary" type="submit">Submit</Button>
+                   
+                    <Row className="justify-content-md-center" style={{paddingTop:'20px',textAlign:'center'}}>
+                        <Col xs lg="2">
+                            <Button variant="primary" type="submit">Submit</Button>
+                        </Col>
+                    </Row>
                 </Form>
 
         </Card>
