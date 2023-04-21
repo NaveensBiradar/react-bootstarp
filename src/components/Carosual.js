@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 export default class Carosual extends Component {
   render() {
     return (
-        <div style={{padding:10}}>
+        <div style={{padding:'10px'}}>
             <Carousel>
                 <Carousel.Item interval={1000}>
                     <img
